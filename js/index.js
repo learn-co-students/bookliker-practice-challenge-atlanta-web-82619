@@ -7,9 +7,7 @@ const showPanel = document.querySelector("#show-panel")
 function fetchBooks() {
     return fetch(booksURL)
     .then(resp => resp.json())
-    .then(books => {
-        books.forEach(book => displayBook(book))
-    })
+    .then(books => books.forEach(book => displayBook(book)))
 }
 
 function fetchUsers() {
