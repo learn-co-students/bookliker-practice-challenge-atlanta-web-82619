@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {fetchBooks()});
 
 const booksURL = "http://localhost:3000/books";
 const usersURL = "http://localhost:3000/users";
-
 const showPanel = document.querySelector("#show-panel")
 
 function fetchBooks() {
@@ -27,7 +26,6 @@ function displayBook(book) {
     li.addEventListener("click", () => showBookDetails(book)) 
 }
 
-
 function showBookDetails(book) {
     showPanel.innerHTML = ""
     let div = document.createElement("div")
@@ -48,7 +46,7 @@ function showBookDetails(book) {
     bookBtn.id = book.id
     bookBtn.className = "add-book"
     bookBtn.innerText = "Add Book"
-    bookBtn.addEventListener("click", (e) => {
+    bookBtn.addEventListener("click", () => {
         const myUser = {"id":1, "username":"pouros"}
         let bookUsers = [...book.users, myUser]
         if(!book.users.find(user => user.id === myUser.id)) {
